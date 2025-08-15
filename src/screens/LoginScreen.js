@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableHighlight, TextInput, Image } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -8,71 +8,128 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <Image 
-          style={{
-              height: '40%',
-              width: '100%'
-          }}
-          source={require('../images/casual_dog.png')}>
-      </Image>
-      <TouchableOpacity
-        style={{
-            display: "flex",
-            flexDirection: "row",
-            marginTop: 20,
-            alignItems: "center",
-            backgroundColor: "#43d38d",
-            borderRadius: 10,
-            width: 300,
-            height: 60
-        }}
-      >
+        <Text
+            style={{
+                fontSize: 35,
+                alignSelf: "flex-start",
+                margin: 10,
+                marginTop: 0,
+                marginLeft: 30
+            }}
+        >Acesse</Text>
+
+        <Text
+            style={{
+                fontSize: 15,
+                alignSelf: "flex-start",
+                margin: 5,
+                marginLeft: 30
+            }}
+        >Nome</Text>
+
+        <TextInput
+            placeholder="Insira o seu nome de usuário"
+            inputMode="text"
+            style={{
+                width: 300,
+                height: 50,
+                margin: 10,
+                borderRadius: 8,
+                color: "#333355",
+                backgroundColor: "#daeaf5ff"
+            }}
+        ></TextInput>
+
+        <Text
+            style={{
+                fontSize: 15,
+                alignSelf: "flex-start",
+                margin: 5,
+                marginLeft: 30
+            }}
+        >Senha</Text>
+
+        <TextInput
+            style={{
+                width: 300,
+                height: 50,
+                margin: 10,
+                borderRadius: 8,
+                color: "#B9D9EB",
+                backgroundColor: "#daeaf5ff"
+            }}
+            placeholder="Insira a sua senha"
+            textContentType="password"
+        ></TextInput>
         <View
             style={{
-                borderRadius: 5,
-                height: 45,
-                margin: 10,
-                width: 45,
-                backgroundColor: "#f0f0f0"
+                display: "flex",
+                flexDirection: "row",
+                gap: 10
             }}
         >
 
-          <Image 
-              style={{
+        <TouchableHighlight
+        underlayColor={"#3CB371"}
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#43d38d",
+                borderRadius: 8,
+                width: 150,
+                height: 60
+
+            }}
+            ><Text>Opção 1</Text>
+        </TouchableHighlight>
+        
+        <TouchableHighlight
+        underlayColor={"#3CB371"}
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#ffffff",
+                borderRadius: 8,
+                width: 150,
+                height: 60
+
+            }}
+        ><Text>Opção 2</Text>
+        </TouchableHighlight>
+        </View>
+
+        <Text
+            style={{
+                marginTop: 40,
+                marginBottom: 40,
+            }}
+        >------------- Divider -------------</Text>
+
+        <View
+            style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: 45
+            }}
+        >
+            <Image 
+                style={{
                     height: 45,
                     width: 45,
                 }}
                 source={require('../images/Google.png')}>
-          </Image>
+            </Image>
+
+            <Image 
+                style={{
+                    height: 45,
+                    width: 45,
+                }}
+                source={require('../images/Facebook.png')}>
+            </Image>
         </View>
-        <Text style={{
-            fontSize: 15,
-            margin: 10,
-            color: "#ffffff",
-        }}>Como deseja acessar?</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 20,
-            flexDirection: "row",
-            backgroundColor: "#ffffff",
-            borderWidth: 1.5,
-            borderColor: "#43d38d",
-            borderRadius: 10,
-            width: 300,
-            height: 60
-        }}
-      >
-
-        <Text style={{
-            fontSize: 15,
-            color: "#000000",
-        }}>Outras opções</Text>
-      </TouchableOpacity>
 
     </View>
   );
@@ -83,7 +140,7 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        paddingTop: 40,
         alignItems: 'center',
         backgroundColor: '#f0f8ff',
     },
