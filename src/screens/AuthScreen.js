@@ -39,6 +39,9 @@ export default function LoginScreen({ navigation }) {
             width: 300,
             height: 60
         }}
+        onPress={() => {
+          navigation.navigate("SignUp");
+        }}
       >
         <View
             style={{
@@ -78,6 +81,9 @@ export default function LoginScreen({ navigation }) {
             borderRadius: 10,
             width: 300,
             height: 60
+        }}
+        onPress={() => {
+          alert("Ops! O servidor não está disponível no momento. Tente novamente mais tarde ou acesse o link https://www.bandlab.com/mrkrull");
         }}
       >
 

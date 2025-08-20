@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Dimensions, TouchableHighlight, TextInput, Image } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, TextInput, Image } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -83,6 +83,25 @@ export default function SignUp({ navigation }) {
             textContentType="password"
         ></TextInput>
 
+        <TouchableOpacity
+        underlayColor={"#f0f8ff"}
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#f0f8ff",
+                borderRadius: 8,
+                margin: 5,
+                width: 300,
+                height: 60
+
+            }}
+            onPress={() => {
+                navigation.navigate("Login");
+            }}
+            ><Text>Já tem uma conta?</Text>
+        </TouchableOpacity>
+
         <View
             style={{
                 display: "flex",
@@ -91,21 +110,22 @@ export default function SignUp({ navigation }) {
             }}
         >
 
-        <TouchableHighlight
+        <TouchableOpacity
         underlayColor={"#3CB371"}
             style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#43d38d",
+                backgroundColor: "#43d38dff",
                 borderRadius: 8,
-                marginTop: 80,
+                marginTop: 20,
                 width: 300,
                 height: 60
 
             }}
+
             ><Text>Opção 1</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
         
         </View>
 
@@ -123,21 +143,49 @@ export default function SignUp({ navigation }) {
                 gap: 45
             }}
         >
-            <Image 
-                style={{
-                    height: 45,
-                    width: 45,
+            <TouchableOpacity
+                onPress={() => {
+                    alert("Função fora de serviço no momento.");
                 }}
-                source={require('../images/Google.png')}>
-            </Image>
+            >
+                <Image 
+                    style={{
+                        height: 45,
+                        width: 45,
+                    }}
+                    source={require('../images/Google.png')}>
+                    
+                </Image>
+            </TouchableOpacity>
 
-            <Image 
-                style={{
-                    height: 45,
-                    width: 45,
+            <TouchableOpacity
+                onPress={() => {
+                    alert("Função fora de serviço no momento.");
                 }}
-                source={require('../images/Facebook.png')}>
-            </Image>
+            >
+                <Image 
+                    style={{
+                        height: 45,
+                        width: 45,
+                    }}
+                    source={require('../images/Facebook.png')}>
+                </Image>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate("Band");
+                }}
+            >
+                <Image 
+                    style={{
+                        height: 45,
+                        width: 45,
+                        borderRadius: 50,
+                    }}
+                    source={require('../images/Bandlab.png')}>
+                </Image>
+            </TouchableOpacity>
         </View>
 
     </View>
