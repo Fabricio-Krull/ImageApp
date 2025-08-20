@@ -5,6 +5,18 @@ const windowWidth = Dimensions.get('window').width;
 
 export default function LoginScreen({ navigation }) {
 
+    const [checked, setChecked] = useState(""); 
+
+    const changeCheck = () => {
+
+        if(checked == ""){
+            setChecked("️✔")
+        }
+        if(checked == "️✔"){
+            setChecked("");
+        }
+
+    }
 
   return (
     <View style={styles.container}>
@@ -61,6 +73,81 @@ export default function LoginScreen({ navigation }) {
             placeholder="Insira a sua senha"
             textContentType="password"
         ></TextInput>
+
+            <View
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 10,
+                    margin: 15
+            }}
+        >
+
+        <TouchableOpacity
+        ></TouchableOpacity>
+
+        <TouchableOpacity
+            style={{
+                height: 30,
+                width: 30,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+                backgroundColor: "#f0f8ff",
+                borderWidth: 2
+            }}
+
+            onPress={() => {
+                changeCheck();
+            }}
+
+        >
+            <Text
+                style = {{
+                    fontSize: 25,
+                    height: 44,
+                    width: 24
+                }}
+            >
+                {checked}
+            </Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+        underlayColor={"#3CB371"}
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#f0f8ff",
+                borderRadius: 8,
+                marginLeft: 0,
+                width: 150,
+                height: 60
+
+            }}
+            ><Text>Lembrar senha</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+        underlayColor={"#3CB371"}
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#f0f8ff",
+                borderRadius: 8,
+                width: 150,
+                height: 60
+
+            }}
+        ><Text>Esqueci minha senha</Text>
+        </TouchableOpacity>
+        </View>
+
         <View
             style={{
                 display: "flex",

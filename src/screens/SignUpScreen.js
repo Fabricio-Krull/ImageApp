@@ -124,7 +124,9 @@ export default function SignUp({ navigation }) {
 
             }}
 
-            ><Text>Opção 1</Text>
+            ><Text
+                style={{color: "#ffffff"}}
+            >Opção 1</Text>
         </TouchableOpacity>
         
         </View>
